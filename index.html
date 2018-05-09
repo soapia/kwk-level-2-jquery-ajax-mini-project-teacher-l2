@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>KWK Spotify API</title>
+    <link rel="stylesheet" type="text/css" href="./index.css" />
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  </head>
+  <body>
+    
+    <div id="search">
+      <input id="query-input" type="text" value="cat dog moose">
+      <img id="search-button" src="https://curriculum-content.s3.amazonaws.com/KWK/search-first-frame.gif">
+    </div>
+    
+    <div id="gallery">
+      <!-- 
+        your index.js file should automatically generate <img> elements here
+        when your ajax call returns GIF information! These are just default ones
+        provided so we have an example in the browser. New <img> elements should
+        replace old ones
+      -->
+      <img src="https://www.tipeeestream.com/bundles/widget/images/animation/default.gif" />
+      <img src="https://www.tipeeestream.com/bundles/widget/images/animation/default.gif" />
+      <img src="https://www.tipeeestream.com/bundles/widget/images/animation/default.gif" />
+    </div>
+    
+    <script src="./index.js" charset="utf-8"></script>
+    
+    <script type="text/javascript">
+      // this is used to animate the search gif on hover. nothing to do here! 
+      $(function() {
+        $("#search-button").hover(
+          function() {
+            $("#search-button").attr("src", "https://media.giphy.com/media/l3q2PZSVUUEsajBIY/giphy.gif");
+          },
+          function() {
+            $(this).attr("src", "https://curriculum-content.s3.amazonaws.com/KWK/search-first-frame.gif");
+          }
+        )
+      });
+    </script>
+  </body>
+</html>
