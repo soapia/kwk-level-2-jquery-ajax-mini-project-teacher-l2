@@ -1,8 +1,6 @@
 ## Introduction
 
-For this mini-project, we will be using the Giphy API to query GIFs that match keywords and dynamically adding them to the DOM! Following is an example of what your App will look like when complete:
-
-![](https://curriculum-content.s3.amazonaws.com/KWK/sample-giphy-proj.gif)
+For this mini-project, we will be using the Giphy API to query GIFs that match keywords and dynamically adding them to the DOM! [example][This link is an example of what your App will look like when complete.]
 
 ## Register Your App
 
@@ -129,3 +127,4 @@ Once complete, have some fun with the App! See if you can, from viewing GIF resu
 
 [giphy-dev]: https://developers.giphy.com/
 [giphy-dashboard]: https://developers.giphy.com/dashboard/
+[example]: https://curriculum-content.s3.amazonaws.com/KWK/sample-giphy-proj.gif
