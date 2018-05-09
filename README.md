@@ -1,6 +1,6 @@
 ## Introduction
 
-For this mini-project, we will be using the Giphy API to query GIFs that match keywords and dynamically adding them to the DOM! [example][This link is an example of what your App will look like when complete.]
+For this mini-project, we will be using the Giphy API to query GIFs that match keywords and dynamically adding them to the DOM! [This link is an example of what your App will look like when complete.][example]
 
 ## Register Your App
 
