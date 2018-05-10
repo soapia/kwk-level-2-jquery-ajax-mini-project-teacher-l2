@@ -3,11 +3,12 @@ const APIKEY = "your api key here!"
 const BASE = "https://api.giphy.com"
 const SEARCH = BASE + "/v1/gifs/search"
 
-// Make sure to have a reference to your gallery DOM element so we can add newly
+// TODO: make sure to have a reference to your gallery DOM element so we can add newly
 // created <img> elements to it!
 
 // this array will hold the urls of the gifs we get back from Giphy. 
 // it is currently populated with placeholder gifs.
+// TODO: make sure to clear this array of placeholders out before adding more gifs.  Otherwise, you'll always have three cats at the beginning!
 let gifURLs = [
   "https://www.tipeeestream.com/bundles/widget/images/animation/default.gif",
   "https://www.tipeeestream.com/bundles/widget/images/animation/default.gif",
