@@ -1,6 +1,6 @@
 ## Introduction
 
-For this mini-project, we will be using the Giphy API to query GIFs that match keywords and dynamically adding them to the DOM! [This link is an example of what your App will look like when complete.][example]
+For this mini-project, we will be using the Giphy API to query GIFs that match keywords and dynamically add them to the DOM! [This link is an example of what your App will look like when complete.][example]
 
 ## Register Your App
 
@@ -94,7 +94,7 @@ All of the styling for this project has been provided in `index.css` with additi
 
 ##### HTML
 
-Take a moment to familiarize yourself with the provided `index.html` file. In addition to already importing jQuery as well as our stylesheet (`index.css`) and script (`index.js`), all of the basic HTML has been provided. If you open your `index.html` file in Chrome now, you should see a minimally framed page.
+Take a moment to familiarize yourself with the provided `index.html` file. In addition to already importing jQuery, as well as our stylesheet (`index.css`) and script (`index.js`), all of the basic HTML has been provided. If you open your `index.html` file in Chrome now, you should see a minimally framed page.
 
 Pay particular attention to the `#search` div, as well as the `#gallery` div. These will be the two DOM elements our code in `index.js` interacts with. 
 
