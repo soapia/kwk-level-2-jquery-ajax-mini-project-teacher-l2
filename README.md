@@ -24,7 +24,7 @@ Once your App is registered, replace the `APIKEY` value in `index.js` with the o
 
 Here is an example search submitted to the API for a single GIF that matches the search for a moose. Take a moment to read the whole request line by line, using the comments as a reference:
 
-```javascript
+```js
 $.ajax({
   url: "https://api.giphy.com/v1/gifs/search",
   dataType: "json", // informs $.ajax what the type of data we are expecting back will be
@@ -41,11 +41,12 @@ $.ajax({
 })
 ```
 
+
 #### Sample Response
 
 Assuming the request we made above was successful, we could expect the response object to look like this:
 
-```javascript
+```js
 // resp
 {
   data: [{ /* one GIF data object! */}], 
@@ -58,7 +59,7 @@ The information we want out of this lives in `resp.data`, which should be an arr
 
 Following is an example of a returned GIF info object:
 
-```javascript
+```js
 // resp.data
 [
   {
@@ -86,11 +87,13 @@ Following is an example of a returned GIF info object:
 
 We are getting a ton of data back, but all we really need to display the GIF on the DOM is one of the GIF URLs. You will see in the `getGifURL` method of `index.js` that the URL we are extracting from a GIF info object can be accessed as follows: `resp.data[0].images.original.url`
 
+
 ## Getting Started
 
 ##### Styling
 
-All of the styling for this project has been provided in `index.css` with additional (minimal) in-line styling found within `index.js`. While you should feel free to change whatever you like, the main focus should be on using the Giphy API and successful rendering results to the DOM!
+All of the styling for this project has been provided in `index.css` with additional (minimal) in-line styling found within `index.js`. While you should feel free to change whatever you like, the main focus should be on using the Giphy API and successful rendering results to the DOM.
+
 
 ##### HTML
 
@@ -98,20 +101,24 @@ Take a moment to familiarize yourself with the provided `index.html` file. In ad
 
 Pay particular attention to the `#search` div, as well as the `#gallery` div. These will be the two DOM elements our code in `index.js` interacts with. 
 
+
 ## Deliverables
 
 _Comments have been provided throughout the code. More specifically, 'TODOs' are written throughout `index.js` which will help guide you in fulfilling the deliverables._
 
 - Register your App and obtain a Giphy API key by following the steps above
-- When a user clicks on your submit button (this image/gif of a lady looking around), the following should happen:
+- When a user clicks on your submit button (the image/gif of a lady looking around), the following should happen:
   - The string in the input element is captured
-  - An `.ajax` request to Giphy with that string is sent off
+  - An `.ajax` request to Giphy with that string as a search query is sent off
   - When data is returned, the GIF URL(s) are captured
   - New `<img>` elements are created (using jQuery) for each returned GIF object
   - The captured GIF URL(s) are added to to the `<img>` elements
   - The newly created `<img>` elements are then inserted into our `#gallery` DOM element
   
 Once complete, have some fun with the App! See if you can, from viewing GIF results only, guess what your group/partners used as a query string. 
+
+If you run into trouble, don't forget to use your Google-fu. jQuery is an extensively documented library, and every question under the Sun on how to do something with it (a.k.a. "How do I add new jQuery elements to the DOM") have been answered on public forums. 
+
 
 ### Stretch Goals
 
@@ -121,7 +128,7 @@ Once complete, have some fun with the App! See if you can, from viewing GIF resu
   - When a user hits enter/submits the input, the value they provided should be checked against the original search query to see if they guessed correctly based on the GIFs alone
 
 ##### Note:
-  - Giphy accepts '+' between words and it will search for GIFs that match both words (i.e. the single GIF returned for hamster+snake in the example at the top of this readme)
+  - Giphy accepts '+' between words and it will search for GIFs that match both words (i.e. the single GIF returned for 'hamster+snake' in the example at the top of this readme)
   - The provided styling will automatically resize `<img>` elements that are children of the `#gallery` DOM element
   
 
