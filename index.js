@@ -1,55 +1,52 @@
-// API Related Globals
-const APIKEY = "your api key here!"
-const BASE = "https://api.giphy.com"
-const SEARCH = BASE + "/v1/gifs/search"
 
-// TODO: make sure to have a reference to your gallery DOM element so we can add newly
-// created <img> elements to it!
 
-// this array will hold the urls of the gifs we get back from Giphy. 
-// it is currently populated with placeholder gifs.
-// TODO: make sure to clear this array of placeholders out before adding more gifs.  Otherwise, you'll always have three cats at the beginning!
-let gifURLs = [
-  "https://www.tipeeestream.com/bundles/widget/images/animation/default.gif",
-  "https://www.tipeeestream.com/bundles/widget/images/animation/default.gif",
-  "https://www.tipeeestream.com/bundles/widget/images/animation/default.gif"
-]
+  const year = $("#year").val()
+  const month = $("#month").val()
+  const day = parseInt($("#day").val())
+  let startDate = `${year}-${month}-${day}`
+  let endDate = `${year}-${month}-${day + 1}`
 
-function renderGallery() {
-  // this function should replace the existing DOM gallery with newly created gif <img> dom elements
+$("#search-button").click(function() {
   
-  const styleWidth = (100.0/gifURLs.length).toString() + "%" // make sure to assign this width to your newly created <img> element so they can dynamically size no matter how many GIFs you are rendering!
-  
-  // TODO: generate your GIFs <img> dom elements with jquery
-  
-  // TODO: populate the gallery with the elements so they display in the browser
-}
-  
-function getGifURL(query, idx) {
-  $.ajax({
-    url: SEARCH,
-    dataType: "json",
-    data: {
-      api_key: APIKEY, 
-      q: query, 
-      limit: 1, 
-      rating: "PG-13" 
-    },
-    success: (resp) => {
-      const url = resp.data[0].images.original.url // as an example, this would grab the url we need from the first gif returned (if the limit is set to 1, there will only be a single result)
-      // TODO: use the info that our ajax request has successfully returned from Giphy. We recommending invoking another function here which can make use of the urls
-    }
-  })
-}
-  
-function handleSubmit() {
-  // TODO: use the value from the input field $("#query-input") to make our ajax request
-  
-  // TODO: if multiple keywords are provided, we should make multiple ajax requests!
-}
-  
-// this jQuery method waits for the document to finish loading before invoking its callback
-$( document ).ready(() => {
-  renderGallery() // renders the placeholders
-  // TODO: we need to make sure our "#search-button" has a 'click' event listener attached to it. See: https://api.jquery.com/click/
+  console.log(month)
+  searchSomething()
 });
+
+function searchSomething() {
+  $.ajax({
+  method: 'GET', //use GET because we are READING data.
+ 
+  url: "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson" + '&starttime=' + startDate + '&endtime=' + endDate,
+  //tell AJAX what url has the JSON we want
+  dataType: 'json', //tell AJAX that its JSON format we want
+  success: onSuccess, // If AJAX is successful, fire a function called onSuccess
+  error: onError // if it isn’t successful, fire a function called onError, so we can stress eat chocolate chip cookies and then try again.
+  }) // close that AJAX function called by JQuery
+}
+
+
+function onSuccess(jsonReturn) {
+  console.log(jsonReturn.features[0].properties.place)
+
+  
+    // var quake = jsonReturn.features[i]
+    var location = jsonReturn.features[0].properties.place
+    var info = jsonReturn.features[0].properties.detail
+    var loadName = `<h2>you were born ${startDate}?? ${location} is quaking.</h2><br>`
+    $("#gallery").empty()
+    $(loadName).appendTo($("#gallery"))
+
+}
+
+function onError() {
+  var loadName = `<h2>i failed.</h2>`
+  $(loadName).appendTo($("#gallery"))
+}
+  
+  
+
+//     $.get(url, function(result) {
+//     var json = $.parseJSON(result);
+//     alert(json.feature); // Do whatever you want here
+// });
+    
